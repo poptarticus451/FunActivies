@@ -5,13 +5,16 @@
     <string name="Fun_Activities">Fun Activities</string>
 
     <string name="Puns">Fun Puns</string>
-    <string name="Fun_PunsButton">Show Another Fun Pun</string>
+    <string name="funPunsButtonText">Show Another Fun Pun</string>
 
     <string name="Fact">Fun Facts</string>
-    <string name="Fun_FactButton">Show Another Fun Fact</string>
+    <string name="funFactButtonText">Show Another Fun Fact</string>
 
     <string name="IceBreakers">Ice breaker\'s</string>
-    <string name="Fun_IceButton">Show More Icebreaker\'s</string>
+    <string name="icebreakerButtonText">Show More Icebreaker\'s</string>
+
+    <string name="dadJoke">Dad Joke\'s</string>
+    <string name="dadJokeButtonText">Show More Dad Joke\'s</string>
 
     <string name="banner_ad_unit_id">ca-app-pub-4109930229904985/5707233464</string>
 

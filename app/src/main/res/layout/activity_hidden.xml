@@ -2,15 +2,15 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/FactScreen"
+    android:id="@+id/dadJokeScene"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fact_background"
+    android:background="@drawable/hidden_activity_background"
     android:padding="12dp"
     tools:context=".Pages.homeScreen">
 
     <TextView
-        android:id="@+id/funFactTextView"
+        android:id="@+id/dadJokeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -23,7 +23,7 @@
         android:shadowDx="3"
         android:shadowDy="6"
         android:shadowRadius="3"
-        android:text="@string/Fact"
+        android:text="@string/dadJoke"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         ads:layout_constraintBottom_toBottomOf="parent"
@@ -31,8 +31,9 @@
         ads:layout_constraintStart_toStartOf="parent"
         ads:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
-        android:id="@+id/showNewFactTextView"
+        android:id="@+id/showNewDadJokeTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -47,20 +48,19 @@
 
 
     <Button
-        android:id="@+id/showFactButton"
+        android:id="@+id/showNewDadJokeButton"
         android:layout_width="0dp"
         android:layout_height="55dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="460dp"
         android:layout_marginEnd="24dp"
-        android:text="@string/funFactButtonText"
-        android:textColor="#F259AC"
+        android:text="@string/dadJokeButtonText"
+        android:textColor="#FF0000"
         android:theme="@style/PrimaryColoredButton"
         ads:layout_constraintBottom_toTopOf="@+id/adView"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent"
-        ads:layout_constraintTop_toBottomOf="@+id/funFactTextView" />
-
+        ads:layout_constraintTop_toBottomOf="@+id/dadJokeTextView" />
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
@@ -76,7 +76,7 @@
         ads:layout_constraintBottom_toBottomOf="parent"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent"
-        ads:layout_constraintTop_toBottomOf="@+id/showFactButton" />
+        ads:layout_constraintTop_toBottomOf="@+id/showNewDadJokeButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

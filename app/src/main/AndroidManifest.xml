@@ -28,15 +28,17 @@
             android:name=".Pages.homeScreen"
             android:screenOrientation="portrait" />
         <activity
-            android:name="org.poptarticus.FunActivitys.Pages.icebreakerActivity"
+            android:name=".Pages.icebreakerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="org.poptarticus.FunActivitys.Pages.punsActivity"
+            android:name=".Pages.punsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="org.poptarticus.FunActivitys.Pages.factActivity"
+            android:name=".Pages.factActivity"
             android:screenOrientation="portrait" />
-
+        <activity
+            android:name=".Pages.hiddenActivity"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"

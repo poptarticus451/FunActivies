@@ -24,31 +24,6 @@ public class homeScreen extends Activity {
     boolean doubleBackToExitPressedOnce = false;
     int number = 0;
     private FirebaseAnalytics mFirebaseAnalytics;
-    // Create an anonymous implementation of OnClickListener
-    private View.OnClickListener hiddenActivity = new View.OnClickListener() {
-        public void onClick(View v) {
-            // do something when the button is clicked
-
-            number += 1;
-
-            System.out.println(number);
-
-            new Handler().postDelayed(new Runnable() {
-
-                @Override
-                public void run() {
-                    number = 0;
-                }
-            }, 1500);
-
-            if (number == 3) {
-                // Start NewActivity.class
-                Intent myIntent = new Intent(homeScreen.this, punsActivity.class);
-                startActivity(myIntent);
-
-            }
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +48,32 @@ public class homeScreen extends Activity {
         changeStatusBarColor();
 
     }
+
+    // Create an anonymous implementation of OnClickListener
+    private View.OnClickListener hiddenActivity = new View.OnClickListener() {
+        public void onClick(View v) {
+            // do something when the button is clicked
+
+            number += 1;
+
+            System.out.println(number);
+
+            new Handler().postDelayed(new Runnable() {
+
+                @Override
+                public void run() {
+                    number = 0;
+                }
+            }, 1500);
+
+            if (number == 3) {
+                // Start NewActivity.class
+                Intent myIntent = new Intent(homeScreen.this, hiddenActivity.class);
+                startActivity(myIntent);
+
+            }
+        }
+    };
 
     /**
      * Making notification bar transparent

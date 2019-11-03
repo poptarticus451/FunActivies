@@ -25,32 +25,35 @@ import java.util.Random;
 public class factActivity extends Activity {
     public static final String TAG = factActivity.class.getSimpleName();
 
-
+    //Define the ad view
     private AdView mAdView;
 
     //private factBook mFactBook = new factBook();
     private allBooks mAllBooks = new allBooks();
 
-
+    //when app opens run this code
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fact);
 
+        //Intestate the buttons and labels
         final TextView factLabel = findViewById(R.id.funFactTextView);
         final TextView newFunFactTextView = findViewById(R.id.showNewFactTextView);
         final Button showFactButton = findViewById(R.id.showFactButton);
 
+        //Change label to different font
         Typeface myTypeFace = Typeface.createFromAsset(getAssets(), "Highjack.otf");
         factLabel.setTypeface(myTypeFace);
 
 
-// This sets the text view when you open the puns activity
+        // This sets the text view when you open the puns activity
         int randomIndexOpen = new Random().nextInt(mAllBooks.mFact.length);
         String randomStringOpen = mAllBooks.mFact[randomIndexOpen];
 
+        //when app gets opened change text to random array variable
         newFunFactTextView.setText(randomStringOpen);
 
-
+        //add the ad on create
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
@@ -64,13 +67,8 @@ public class factActivity extends Activity {
                 int randomIndex = new Random().nextInt(mAllBooks.mFact.length);
                 String randomString = mAllBooks.mFact[randomIndex];
 
+                //on button click change text
                 newFunFactTextView.setText(randomString);
-
-
-                //int color = mUnusedFactsColorWheel.getColor();
-                //constraintLayout.setBackgroundColor(color);
-                //showFactButton.setTextColor(color);
-
 
             }
 
@@ -89,9 +87,9 @@ public class factActivity extends Activity {
 
     }
 
-    /**
-     * Making notification bar transparent
-     */
+
+    //Making notification bar transparent
+
     private void changeStatusBarColor() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();

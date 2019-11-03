@@ -23,7 +23,6 @@ import java.util.Random;
 
 public class punsActivity extends Activity {
 
-
     public static final String TAG = punsActivity.class.getSimpleName();
 
     private AdView mAdView;
