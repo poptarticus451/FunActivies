@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Fun Puns</string>
+    <string name="Fun_Activities">Fun Activities</string>
+
+    <string name="Puns">Fun Puns</string>
+    <string name="Fun_PunsButton">Show Another Fun Pun</string>
+
+    <string name="Fact">Fun Facts</string>
+    <string name="Fun_FactButton">Show Another Fun Fact</string>
+
+    <string name="IceBreakers">Ice breaker\'s</string>
+    <string name="Fun_IceButton">Show More Icebreaker\'s</string>
+
+    <string name="banner_ad_unit_id">ca-app-pub-4109930229904985/5707233464</string>
+
+
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Fun Activities</string>
+    <string name="slide_1_desc">The app to make you cringe and laugh.</string>
+
+    <string name="slide_2_title">Fun Pun\'s</string>
+    <string name="slide_2_desc">Fun puns to make you cringe.</string>
+
+    <string name="slide_3_title">Fun Fact\'s</string>
+    <string name="slide_3_desc">Facts that will make your friends and family think your the smartest person alive.</string>
+
+    <string name="slide_4_title">Fun Icebreaker\'s</string>
+    <string name="slide_4_desc">Icebreakers to get to know the new people in your life.</string>
+
+
+
+</resources>
