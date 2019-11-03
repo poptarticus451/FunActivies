@@ -64,7 +64,7 @@ public class homeScreen extends Activity {
                 public void run() {
                     number = 0;
                 }
-            }, 1500);
+            }, 2500);
 
             if (number == 3) {
                 // Start NewActivity.class

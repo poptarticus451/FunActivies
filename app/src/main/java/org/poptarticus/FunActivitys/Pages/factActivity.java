@@ -7,7 +7,9 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -27,7 +29,7 @@ public class factActivity extends Activity {
 
     //Define the ad view
     private AdView mAdView;
-
+    int numberToShowHint = 0;
     //private factBook mFactBook = new factBook();
     private allBooks mAllBooks = new allBooks();
 
@@ -36,9 +38,11 @@ public class factActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fact);
 
+        numberToShowHint = 0;
+
         //Intestate the buttons and labels
         final TextView factLabel = findViewById(R.id.funFactTextView);
-        final TextView newFunFactTextView = findViewById(R.id.showNewFactTextView);
+        final TextView showNewFunFactTextView = findViewById(R.id.showNewFactTextView);
         final Button showFactButton = findViewById(R.id.showFactButton);
 
         //Change label to different font
@@ -51,7 +55,7 @@ public class factActivity extends Activity {
         String randomStringOpen = mAllBooks.mFact[randomIndexOpen];
 
         //when app gets opened change text to random array variable
-        newFunFactTextView.setText(randomStringOpen);
+        showNewFunFactTextView.setText(randomStringOpen);
 
         //add the ad on create
         mAdView = findViewById(R.id.adView);
@@ -63,12 +67,30 @@ public class factActivity extends Activity {
             @Override
             public void onClick(View view) {
 
-                // This sets the text view when the button is clicked
-                int randomIndex = new Random().nextInt(mAllBooks.mFact.length);
-                String randomString = mAllBooks.mFact[randomIndex];
 
-                //on button click change text
-                newFunFactTextView.setText(randomString);
+                numberToShowHint += 1;
+
+                if (numberToShowHint == 25) {
+                    factLabel.setText(R.string.hiddenActivityHint);
+                    factLabel.setTextSize(20);
+                    factLabel.setGravity(Gravity.CENTER);
+
+                    new Handler().postDelayed(new Runnable() {
+
+                        @Override
+                        public void run() {
+                            factLabel.setText(R.string.Puns);
+                        }
+                    }, 2500);
+                } else {
+                    // This sets the text view when the button is clicked
+                    int randomIndex = new Random().nextInt(mAllBooks.mFact.length);
+                    String randomString = mAllBooks.mFact[randomIndex];
+
+                    //on button click change text
+                    showNewFunFactTextView.setText(randomString);
+
+                }
 
             }
 

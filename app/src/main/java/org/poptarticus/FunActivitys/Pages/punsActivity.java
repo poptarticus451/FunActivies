@@ -6,7 +6,9 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -29,6 +31,9 @@ public class punsActivity extends Activity {
 
     private allBooks mAllBooks = new allBooks();
 
+    //number that will display certain text telling user about hidden activity
+    int numberToShowHint = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +43,8 @@ public class punsActivity extends Activity {
         final TextView showNewPunTextView = findViewById(R.id.showNewPunTextView);
         final Button showPunButton = findViewById(R.id.showPunButton);
 
+
+        numberToShowHint = 0;
 
         Typeface myTypeFace = Typeface.createFromAsset(getAssets(), "Highjack.otf");
         punLabel.setTypeface(myTypeFace);
@@ -60,18 +67,28 @@ public class punsActivity extends Activity {
             public void onClick(View view) {
 
 
-                // This sets the text view when the button is clicked
-                int randomIndex = new Random().nextInt(mAllBooks.mPuns.length);
-                String randomString = mAllBooks.mPuns[randomIndex];
+                numberToShowHint += 1;
 
-                showNewPunTextView.setText(randomString);
+                if (numberToShowHint == 50) {
+                    punLabel.setText(R.string.hiddenActivityHint);
+                    punLabel.setTextSize(20);
+                    punLabel.setGravity(Gravity.CENTER);
 
+                    new Handler().postDelayed(new Runnable() {
 
-                //int color = mUnusedPunsColorWheel.getColor();
-                //constraintLayout.setBackgroundColor(color);
-                //showPunButton.setTextColor(color);
+                        @Override
+                        public void run() {
+                            punLabel.setText(R.string.Puns);
+                        }
+                    }, 2500);
 
+                } else {
+                    // This sets the text view when the button is clicked
+                    int randomIndex = new Random().nextInt(mAllBooks.mPuns.length);
+                    String randomString = mAllBooks.mPuns[randomIndex];
 
+                    showNewPunTextView.setText(randomString);
+                }
             }
 
         };

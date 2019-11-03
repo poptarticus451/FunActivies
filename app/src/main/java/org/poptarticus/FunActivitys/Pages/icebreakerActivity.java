@@ -6,7 +6,9 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -26,7 +28,7 @@ public class icebreakerActivity extends Activity {
 
 
     private AdView mAdView;
-
+    int numberToShowHint = 0;
     private allBooks mAllBooks = new allBooks();
 
     @Override
@@ -41,6 +43,7 @@ public class icebreakerActivity extends Activity {
         Typeface myTypeFace = Typeface.createFromAsset(getAssets(), "Highjack.otf");
         icebreakerLabel.setTypeface(myTypeFace);
 
+        numberToShowHint = 0;
 
         // This sets the text view when you open the puns activity
         int randomIndexOpen = new Random().nextInt(mAllBooks.mIcebreaker.length);
@@ -57,17 +60,28 @@ public class icebreakerActivity extends Activity {
             @Override
             public void onClick(View view) {
 
-                // This sets the text view when the button is clicked
-                int randomIndex = new Random().nextInt(mAllBooks.mIcebreaker.length);
-                String randomString = mAllBooks.mIcebreaker[randomIndex];
 
-                showNewIcebreakerTextView.setText(randomString);
+                numberToShowHint += 1;
 
+                if (numberToShowHint == 40) {
+                    icebreakerLabel.setText(R.string.hiddenActivityHint);
+                    icebreakerLabel.setTextSize(20);
+                    icebreakerLabel.setGravity(Gravity.CENTER);
 
-                //int color = mIcebreakersColorWheel.getColor();
-                //constraintLayout.setBackgroundColor(color);
-                //showIcebreakerButton.setTextColor(color);
+                    new Handler().postDelayed(new Runnable() {
 
+                        @Override
+                        public void run() {
+                            icebreakerLabel.setText(R.string.Puns);
+                        }
+                    }, 2500);
+                } else {
+                    // This sets the text view when the button is clicked
+                    int randomIndex = new Random().nextInt(mAllBooks.mIcebreaker.length);
+                    String randomString = mAllBooks.mIcebreaker[randomIndex];
+
+                    showNewIcebreakerTextView.setText(randomString);
+                }
             }
 
         };
