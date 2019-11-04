@@ -16,7 +16,6 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
-import org.poptarticus.FunActivitys.Books.allBooks;
 import org.poptarticus.FunActivitys.R;
 
 import java.util.Random;

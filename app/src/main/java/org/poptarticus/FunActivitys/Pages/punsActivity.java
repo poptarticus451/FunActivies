@@ -1,12 +1,12 @@
 package org.poptarticus.FunActivitys.Pages;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.transition.Explode;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -15,24 +15,22 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
-import org.poptarticus.FunActivitys.Books.allBooks;
 import org.poptarticus.FunActivitys.R;
 
 import java.util.Random;
 
-public class punsActivity extends Activity {
+public class punsActivity extends AppCompatActivity {
 
     public static final String TAG = punsActivity.class.getSimpleName();
-
-    private AdView mAdView;
-
-    private allBooks mAllBooks = new allBooks();
-
     //number that will display certain text telling user about hidden activity
     int numberToShowHint = 0;
+    private AdView mAdView;
+    private allBooks mAllBooks = new allBooks();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +41,8 @@ public class punsActivity extends Activity {
         final TextView showNewPunTextView = findViewById(R.id.showNewPunTextView);
         final Button showPunButton = findViewById(R.id.showPunButton);
 
+
+        getWindow().setExitTransition(new Explode());
 
         numberToShowHint = 0;
 
@@ -85,7 +85,9 @@ public class punsActivity extends Activity {
                 } else {
                     // This sets the text view when the button is clicked
                     int randomIndex = new Random().nextInt(mAllBooks.mPuns.length);
+                    System.out.println(randomIndex);
                     String randomString = mAllBooks.mPuns[randomIndex];
+
 
                     showNewPunTextView.setText(randomString);
                 }

@@ -1,4 +1,4 @@
-package org.poptarticus.FunActivitys.Books;
+package org.poptarticus.FunActivitys.Pages;
 
 public class allBooks {
 

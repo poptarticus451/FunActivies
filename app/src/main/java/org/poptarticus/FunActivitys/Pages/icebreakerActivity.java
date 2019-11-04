@@ -18,17 +18,14 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
-import org.poptarticus.FunActivitys.Books.allBooks;
 import org.poptarticus.FunActivitys.R;
 
 import java.util.Random;
 
 public class icebreakerActivity extends Activity {
     public static final String TAG = punsActivity.class.getSimpleName();
-
-
-    private AdView mAdView;
     int numberToShowHint = 0;
+    private AdView mAdView;
     private allBooks mAllBooks = new allBooks();
 
     @Override

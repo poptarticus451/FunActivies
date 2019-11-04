@@ -19,17 +19,15 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
-import org.poptarticus.FunActivitys.Books.allBooks;
 import org.poptarticus.FunActivitys.R;
 
 import java.util.Random;
 
 public class factActivity extends Activity {
     public static final String TAG = factActivity.class.getSimpleName();
-
+    int numberToShowHint = 0;
     //Define the ad view
     private AdView mAdView;
-    int numberToShowHint = 0;
     //private factBook mFactBook = new factBook();
     private allBooks mAllBooks = new allBooks();
 
