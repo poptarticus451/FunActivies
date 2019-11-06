@@ -23,9 +23,9 @@ import org.poptarticus.FunActivitys.R;
 import java.util.Random;
 
 public class icebreakerActivity extends Activity {
-    public static final String TAG = punsActivity.class.getSimpleName();
+
     int numberToShowHint = 0;
-    private AdView mAdView;
+    AdView mAdView;
     private allBooks mAllBooks = new allBooks();
 
     @Override
@@ -84,8 +84,6 @@ public class icebreakerActivity extends Activity {
         };
         showIcebreakerButton.setOnClickListener(listener);
 
-        //Toast.makeText(this, "Yay! Our Activity was created!", Toast.LENGTH_LONG).show();
-        Log.d(TAG, "We're logging from the onCreate() method!");
         // Making notification bar transparent
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);

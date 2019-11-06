@@ -1,11 +1,11 @@
 package org.poptarticus.FunActivitys.Pages;
 
-public class allBooks {
+class allBooks {
 
     // Member variable (properties about the object)
-    public String[] mPuns = {
+    String[] mPuns = {
             "I wondered why the baseball was getting bigger. Then it hit me.",
-            "Did you hear about the guy whose whole left side was cut off? He's all right now.",
+            "Did you hear about the guy whose whole left side was cut off?  He's all right now.",
             "I'm reading a book about anti-gravity. It's impossible to put down.",
             "I used to be a banker but I lost interest",
             "I'd tell you a chemistry joke but I know I wouldn't get a reaction.",
@@ -139,7 +139,7 @@ public class allBooks {
     };
 
 
-    public String[] mFact = {
+    String[] mFact = {
             "Ants stretch when they wake up in the morning.",
             "Ostriches can run faster than horses.",
             "Olympic gold medals are actually made mostly of silver.",
@@ -230,7 +230,7 @@ public class allBooks {
     };
 
     // Member variable (properties about the object)
-    public String[] mIcebreaker = {
+    String[] mIcebreaker = {
 
             "Whats the greatest bit of advice a parent or mentor has given you?",
             "What technology innovation made the most impact on your life?",
@@ -306,7 +306,7 @@ public class allBooks {
     };
 
     // Member variable (properties about the object)
-    public String[] mDadJoke = {
+    String[] mDadJoke = {
 
             "Dad, did you get a haircut? No I got them all cut.",
             "What do you call a Mexican who has lost his car? Carlos.",

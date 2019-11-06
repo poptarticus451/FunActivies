@@ -22,14 +22,16 @@ import com.google.android.gms.ads.AdView;
 
 import org.poptarticus.FunActivitys.R;
 
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 public class punsActivity extends AppCompatActivity {
 
-    public static final String TAG = punsActivity.class.getSimpleName();
+
     //number that will display certain text telling user about hidden activity
     int numberToShowHint = 0;
-    private AdView mAdView;
+    AdView mAdView;
     private allBooks mAllBooks = new allBooks();
 
     @Override
@@ -88,6 +90,20 @@ public class punsActivity extends AppCompatActivity {
                     System.out.println(randomIndex);
                     String randomString = mAllBooks.mPuns[randomIndex];
 
+
+                    int n = mAllBooks.mPuns.length;
+                    //if n=100 means it give random numb with no duplicate values with in the range 100.
+                    Random r = new Random();
+                    Set<Integer> positionValue = new HashSet<>();
+                    for (int i = 0; i < n; i++) {
+                        while (true) {
+                            int number = r.nextInt(n) + 1;
+                            if (!positionValue.contains(number)) {
+                                positionValue.add(number);
+                                break;
+                            }
+                        }
+                    }
 
                     showNewPunTextView.setText(randomString);
                 }

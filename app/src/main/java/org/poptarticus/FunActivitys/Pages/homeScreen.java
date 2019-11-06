@@ -24,31 +24,6 @@ public class homeScreen extends Activity {
     boolean doubleBackToExitPressedOnce = false;
     int number = 0;
     private FirebaseAnalytics mFirebaseAnalytics;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_screen);
-        Typeface myTypeFace = Typeface.createFromAsset(getAssets(), "Highjack.otf");
-        Button hiddenButton = findViewById(R.id.MenuButton);
-        hiddenButton.setTypeface(myTypeFace);
-
-        number = 0;
-
-        hiddenButton.setOnClickListener(hiddenActivity);
-
-        // Obtain the FirebaseAnalytics instance.
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
-        // Making notification bar transparent
-        if (Build.VERSION.SDK_INT >= 21) {
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-        }
-
-        // making notification bar transparent
-        changeStatusBarColor();
-
-    }
-
     // Create an anonymous implementation of OnClickListener
     private View.OnClickListener hiddenActivity = new View.OnClickListener() {
         public void onClick(View v) {
@@ -74,6 +49,30 @@ public class homeScreen extends Activity {
             }
         }
     };
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home_screen);
+        Typeface myTypeFace = Typeface.createFromAsset(getAssets(), "Highjack.otf");
+        Button hiddenButton = findViewById(R.id.MenuButton);
+        hiddenButton.setTypeface(myTypeFace);
+
+        number = 0;
+
+        hiddenButton.setOnClickListener(hiddenActivity);
+
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        // Making notification bar transparent
+        if (Build.VERSION.SDK_INT >= 21) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        }
+
+        // making notification bar transparent
+        changeStatusBarColor();
+
+    }
 
     /**
      * Making notification bar transparent

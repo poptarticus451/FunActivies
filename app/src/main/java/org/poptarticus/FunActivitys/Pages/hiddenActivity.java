@@ -22,9 +22,7 @@ import java.util.Random;
 
 public class hiddenActivity extends Activity {
 
-    public static final String TAG = hiddenActivity.class.getSimpleName();
-
-    private AdView mAdView;
+    AdView mAdView;
 
     private allBooks mAllBooks = new allBooks();
 
