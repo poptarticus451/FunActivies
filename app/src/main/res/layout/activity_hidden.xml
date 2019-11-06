@@ -9,31 +9,9 @@
     android:padding="12dp"
     tools:context=".Pages.homeScreen">
 
-    <TextView
-        android:id="@+id/dadJokeTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="620dp"
-        android:shadowColor="#575656"
-        android:shadowDx="3"
-        android:shadowDy="6"
-        android:shadowRadius="3"
-        android:text="@string/dadJoke"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
-        ads:layout_constraintBottom_toBottomOf="parent"
-        ads:layout_constraintEnd_toEndOf="parent"
-        ads:layout_constraintStart_toStartOf="parent"
-        ads:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
-        android:id="@+id/showNewDadJokeTextView"
+        android:id="@+id/puzzleCongratulationsTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -43,24 +21,42 @@
         android:textSize="24sp"
         ads:layout_constraintBottom_toBottomOf="parent"
         ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintHorizontal_bias="0.458"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toTopOf="parent"
+        ads:layout_constraintVertical_bias="0.352" />
+
+    <EditText
+        android:id="@+id/puzzlePasscode"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:background="@android:color/white"
+        android:elevation="5dp"
+        android:ems="10"
+        android:gravity="center_horizontal|center_vertical"
+        android:hint="@string/Hint"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:maxLength="4"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent"
         ads:layout_constraintTop_toTopOf="parent" />
 
-
     <Button
-        android:id="@+id/showNewDadJokeButton"
-        android:layout_width="0dp"
+        android:id="@+id/enterButton"
+        android:layout_width="wrap_content"
         android:layout_height="55dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="556dp"
+        android:layout_marginTop="448dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/dadJokeButtonText"
+        android:layout_marginBottom="298dp"
+        android:text="@string/Enter"
         android:textColor="#FF0000"
         android:theme="@style/PrimaryColoredButton"
-        ads:layout_constraintBottom_toTopOf="@+id/adView"
+        ads:layout_constraintBottom_toBottomOf="parent"
         ads:layout_constraintEnd_toEndOf="parent"
-        ads:layout_constraintHorizontal_bias="0.916"
+        ads:layout_constraintHorizontal_bias="0.498"
         ads:layout_constraintStart_toStartOf="parent"
         ads:layout_constraintTop_toTopOf="parent" />
 
@@ -71,6 +67,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="727dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
         ads:adSize="BANNER"
@@ -78,7 +75,7 @@
         ads:layout_constraintBottom_toBottomOf="parent"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent"
-        ads:layout_constraintTop_toBottomOf="@+id/showNewDadJokeButton" />
+        ads:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

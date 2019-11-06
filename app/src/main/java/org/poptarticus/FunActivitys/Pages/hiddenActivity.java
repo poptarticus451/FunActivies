@@ -3,7 +3,6 @@ package org.poptarticus.FunActivitys.Pages;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +10,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
@@ -18,56 +18,30 @@ import com.google.android.gms.ads.AdView;
 
 import org.poptarticus.FunActivitys.R;
 
-import java.util.Random;
-
 public class hiddenActivity extends Activity {
 
     AdView mAdView;
+    String passcode = "1234";
 
-    private allBooks mAllBooks = new allBooks();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hidden);
 
-        final TextView dadJokeLabel = findViewById(R.id.dadJokeTextView);
-        final TextView showNewDadJokeTextView = findViewById(R.id.showNewDadJokeTextView);
-        final Button showNewDadJokeButton = findViewById(R.id.showNewDadJokeButton);
+        final TextView puzzleCongratulationsTextView = findViewById(R.id.puzzleCongratulationsTextView);
+        final EditText passcodeEditText = findViewById(R.id.puzzlePasscode);
+        final Button enterButton = findViewById(R.id.enterButton);
+
+        //Set Text view to string
+        puzzleCongratulationsTextView.setText(R.string.congratulations);
 
 
-        Typeface myTypeFace = Typeface.createFromAsset(getAssets(), "Highjack.otf");
-        dadJokeLabel.setTypeface(myTypeFace);
-
-
-        // This sets the text view when you open the puns activity
-        int randomIndexOpen = new Random().nextInt(mAllBooks.mDadJoke.length);
-        final String randomString = mAllBooks.mDadJoke[randomIndexOpen];
-
-        showNewDadJokeTextView.setText(randomString);
-
-
+        //Load Ad
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-
-        View.OnClickListener listener = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-                // This sets the text view when the button is clicked
-                int randomIndex = new Random().nextInt(mAllBooks.mDadJoke.length);
-                String randomString = mAllBooks.mDadJoke[randomIndex];
-
-                showNewDadJokeTextView.setText(randomString);
-
-
-            }
-
-        };
-        showNewDadJokeButton.setOnClickListener(listener);
         // Making notification bar transparent
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
@@ -75,6 +49,30 @@ public class hiddenActivity extends Activity {
 
         // making notification bar transparent
         changeStatusBarColor();
+
+
+        //enter button on clock listener
+        enterButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+
+                //get text change to string then make sure it is equal to passcode var
+                if (passcodeEditText.getText().toString().equals(passcode)) {
+
+                    //get edit text text and clear
+                    passcodeEditText.getText().clear();
+
+                    //Hide Buttons
+                    puzzleCongratulationsTextView.setVisibility(View.GONE);
+                    passcodeEditText.setVisibility(View.GONE);
+                    enterButton.setVisibility(View.GONE);
+
+
+                } else {
+                    System.out.println("False");
+                }
+
+            }
+        });
 
     }
 

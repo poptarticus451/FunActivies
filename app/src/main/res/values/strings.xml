@@ -13,9 +13,6 @@
     <string name="IceBreakers">Ice breaker\'s</string>
     <string name="icebreakerButtonText">Show More Icebreaker\'s</string>
 
-    <string name="dadJoke">Dad Joke\'s</string>
-    <string name="dadJokeButtonText">Show More Dad Joke\'s</string>
-
     <string name="banner_ad_unit_id">ca-app-pub-4109930229904985/5707233464</string>
 
 
@@ -37,6 +34,10 @@
 
 
     <string name="hiddenActivityHint">There is a hidden activity within this app can you find it!!!</string>
+    <string name="congratulations">Congratulations!!!! You found the hidden activity now can you solve the puzzle?????</string>
+    <string name="firstChallengeDone">Congratulations on completing the first challenge lets see if you can pass the rest</string>
+    <string name="Hint">Passcode</string>
+    <string name="Enter">Enter</string>
 
 
 </resources>
