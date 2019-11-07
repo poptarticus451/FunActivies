@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/fact_background"
     android:padding="12dp"
-    tools:context=".Pages.homeScreen">
+    tools:context=".MainActivitys.factActivity">
 
     <TextView
         android:id="@+id/funFactTextView"

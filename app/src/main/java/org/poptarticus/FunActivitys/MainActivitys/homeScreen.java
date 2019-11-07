@@ -1,4 +1,4 @@
-package org.poptarticus.FunActivitys.Pages;
+package org.poptarticus.FunActivitys.MainActivitys;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -43,7 +43,7 @@ public class homeScreen extends Activity {
 
             if (number == 3) {
                 // Start NewActivity.class
-                Intent myIntent = new Intent(homeScreen.this, org.poptarticus.FunActivitys.Pages.hiddenActivity.class);
+                Intent myIntent = new Intent(homeScreen.this, org.poptarticus.FunActivitys.HiddenPuzzle.hiddenActivity.class);
                 startActivity(myIntent);
 
             }

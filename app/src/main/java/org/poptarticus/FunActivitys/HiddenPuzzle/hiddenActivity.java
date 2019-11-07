@@ -1,4 +1,4 @@
-package org.poptarticus.FunActivitys.Pages;
+package org.poptarticus.FunActivitys.HiddenPuzzle;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
+import org.poptarticus.FunActivitys.MainActivitys.homeScreen;
 import org.poptarticus.FunActivitys.R;
 
 
@@ -30,7 +31,6 @@ public class hiddenActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hidden);
-
 
         final TextView puzzleCongratulationsTextView = findViewById(R.id.puzzleCongratulationsTextView);
         final EditText passcodeEditText = findViewById(R.id.puzzlePasscode);
@@ -54,6 +54,9 @@ public class hiddenActivity extends Activity {
         changeStatusBarColor();
 
 
+        Intent intent = new Intent(this, quizActivity.class);
+
+
         //enter button on clock listener
         enterButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -61,14 +64,7 @@ public class hiddenActivity extends Activity {
                 //get text change to string then make sure it is equal to passcode var
                 if (passcodeEditText.getText().toString().equals(passcode)) {
 
-                    passcodeEditText.setHint(passcode);
-                    //get edit text text and clear
-                    passcodeEditText.getText().clear();
-
-                    //Hide Buttons
-                    puzzleCongratulationsTextView.setVisibility(View.GONE);
-                    //passcodeEditText.setVisibility(View.GONE);
-                    enterButton.setVisibility(View.GONE);
+                    startActivity(new Intent(hiddenActivity.this, quizActivity.class));
 
 
                 } else {

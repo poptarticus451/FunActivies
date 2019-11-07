@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/hidden_activity_background"
     android:padding="12dp"
-    tools:context=".Pages.homeScreen">
+    tools:context=".HiddenPuzzle.hiddenActivity">
 
 
     <TextView

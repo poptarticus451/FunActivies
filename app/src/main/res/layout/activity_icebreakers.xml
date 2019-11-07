@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/icebreakers_background"
     android:padding="12dp"
-    tools:context=".Pages.homeScreen">
+    tools:context=".MainActivitys.icebreakerActivity">
 
     <TextView
         android:id="@+id/icebreakerTextView"
@@ -55,7 +55,6 @@
         android:layout_marginTop="556dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="8dp"
-        android:onClick="showIcebreakerActivity"
         android:text="@string/icebreakerButtonText"
         android:textColor="#E5432D"
         android:theme="@style/PrimaryColoredButton"

@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name="org.poptarticus.FunActivitys.Pages.WelcomeActivity"
+            android:name="org.poptarticus.FunActivitys.WelcomeActivity.WelcomeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
             <intent-filter>
@@ -24,19 +24,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Pages.homeScreen"
+            android:name=".MainActivitys.homeScreen"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Pages.icebreakerActivity"
+            android:name=".MainActivitys.icebreakerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Pages.punsActivity"
+            android:name=".MainActivitys.punsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Pages.factActivity"
+            android:name=".MainActivitys.factActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Pages.hiddenActivity"
+            android:name=".HiddenPuzzle.hiddenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HiddenPuzzle.quizActivity"
             android:screenOrientation="portrait" />
 
         <meta-data

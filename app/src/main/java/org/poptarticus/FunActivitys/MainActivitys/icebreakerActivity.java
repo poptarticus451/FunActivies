@@ -1,4 +1,4 @@
-package org.poptarticus.FunActivitys.Pages;
+package org.poptarticus.FunActivitys.MainActivitys;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
+import org.poptarticus.FunActivitys.Book.allBooks;
 import org.poptarticus.FunActivitys.R;
 
 import java.util.Random;

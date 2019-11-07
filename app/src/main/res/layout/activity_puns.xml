@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/puns_background"
     android:padding="12dp"
-    tools:context=".Pages.homeScreen">
+    tools:context=".MainActivitys.punsActivity">
 
 
     <TextView
@@ -55,7 +55,6 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="8dp"
         android:elevation="200dp"
-        android:onClick="showPunsActivity"
         android:text="@string/funPunsButtonText"
         android:textColor="#FFA200"
         android:theme="@style/PrimaryColoredButton"

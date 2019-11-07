@@ -1,17 +1,17 @@
-package org.poptarticus.FunActivitys.Pages;
+package org.poptarticus.FunActivitys.WelcomeActivity;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-public class PrefManager {
+class PrefManager {
     // Shared preferences file name
     private static final String PREF_NAME = "androidhive-welcome";
     private static final String IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch";
+    // shared pref mode
+    int PRIVATE_MODE = 0;
     private SharedPreferences pref;
     private SharedPreferences.Editor editor;
     private Context _context;
-    // shared pref mode
-    int PRIVATE_MODE = 0;
 
     PrefManager(Context context) {
         this._context = context;

@@ -1,4 +1,4 @@
-package org.poptarticus.FunActivitys.Pages;
+package org.poptarticus.FunActivitys.WelcomeActivity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import org.poptarticus.FunActivitys.MainActivitys.homeScreen;
 import org.poptarticus.FunActivitys.R;
 
 

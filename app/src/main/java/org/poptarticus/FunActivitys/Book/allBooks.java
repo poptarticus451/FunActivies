@@ -1,9 +1,9 @@
-package org.poptarticus.FunActivitys.Pages;
+package org.poptarticus.FunActivitys.Book;
 
-class allBooks {
+public class allBooks {
 
     // Member variable (properties about the object)
-    String[] mPuns = {
+    public String[] mPuns = {
             "I wondered why the baseball was getting bigger. Then it hit me.",
             "Did you hear about the guy whose whole left side was cut off?  He's all right now.",
             "I'm reading a book about anti-gravity. It's impossible to put down.",
@@ -139,7 +139,7 @@ class allBooks {
     };
 
 
-    String[] mFact = {
+    public String[] mFact = {
             "Ants stretch when they wake up in the morning.",
             "Ostriches can run faster than horses.",
             "Olympic gold medals are actually made mostly of silver.",
@@ -230,7 +230,7 @@ class allBooks {
     };
 
     // Member variable (properties about the object)
-    String[] mIcebreaker = {
+    public String[] mIcebreaker = {
 
             "Whats the greatest bit of advice a parent or mentor has given you?",
             "What technology innovation made the most impact on your life?",

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/home_screen_background"
     android:padding="12dp"
-    tools:context=".Pages.homeScreen">
+    tools:context=".MainActivitys.homeScreen">
 
 
     <Button
