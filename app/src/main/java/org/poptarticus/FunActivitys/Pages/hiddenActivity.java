@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -18,6 +19,7 @@ import com.google.android.gms.ads.AdView;
 
 import org.poptarticus.FunActivitys.R;
 
+
 public class hiddenActivity extends Activity {
 
     AdView mAdView;
@@ -28,6 +30,7 @@ public class hiddenActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hidden);
+
 
         final TextView puzzleCongratulationsTextView = findViewById(R.id.puzzleCongratulationsTextView);
         final EditText passcodeEditText = findViewById(R.id.puzzlePasscode);
@@ -58,17 +61,26 @@ public class hiddenActivity extends Activity {
                 //get text change to string then make sure it is equal to passcode var
                 if (passcodeEditText.getText().toString().equals(passcode)) {
 
+                    passcodeEditText.setHint(passcode);
                     //get edit text text and clear
                     passcodeEditText.getText().clear();
 
                     //Hide Buttons
                     puzzleCongratulationsTextView.setVisibility(View.GONE);
-                    passcodeEditText.setVisibility(View.GONE);
+                    //passcodeEditText.setVisibility(View.GONE);
                     enterButton.setVisibility(View.GONE);
 
 
                 } else {
-                    System.out.println("False");
+                    puzzleCongratulationsTextView.setText(R.string.Wrong);
+
+                    new Handler().postDelayed(new Runnable() {
+
+                        @Override
+                        public void run() {
+                            puzzleCongratulationsTextView.setText(R.string.congratulations);
+                        }
+                    }, 2500);
                 }
 
             }

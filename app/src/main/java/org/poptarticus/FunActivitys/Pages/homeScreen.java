@@ -43,7 +43,7 @@ public class homeScreen extends Activity {
 
             if (number == 3) {
                 // Start NewActivity.class
-                Intent myIntent = new Intent(homeScreen.this, hiddenActivity.class);
+                Intent myIntent = new Intent(homeScreen.this, org.poptarticus.FunActivitys.Pages.hiddenActivity.class);
                 startActivity(myIntent);
 
             }

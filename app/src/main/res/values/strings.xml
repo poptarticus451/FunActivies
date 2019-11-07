@@ -38,6 +38,7 @@
     <string name="firstChallengeDone">Congratulations on completing the first challenge lets see if you can pass the rest</string>
     <string name="Hint">Passcode</string>
     <string name="Enter">Enter</string>
+    <string name="Wrong">Wrong!!!</string>
 
 
 </resources>
