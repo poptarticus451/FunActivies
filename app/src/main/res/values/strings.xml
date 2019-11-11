@@ -40,5 +40,11 @@
     <string name="Enter">Enter</string>
     <string name="Wrong">Wrong!!!</string>
 
+    <string name="testTextForAnswerButtons">Answers Button Test</string>
+    <string name="startQuizButton">Start the Quiz</string>
+    <string name="quizTimeCongratulations">Congratulations!!!! on finding the passcode, Now can you pass the quiz?????</string>
+    <string name="failedTest">You must get all questions correct in order to pass the test!!!!!</string>
+    <string name="tryAgainButton">Try Again!!</string>
+
 
 </resources>
