@@ -10,7 +10,7 @@
     tools:context=".MainActivitys.factActivity">
 
     <TextView
-        android:id="@+id/funFactTextView"
+        android:id="@+id/funFactTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -32,7 +32,7 @@
         ads:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/showNewFactTextView"
+        android:id="@+id/showFactTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"

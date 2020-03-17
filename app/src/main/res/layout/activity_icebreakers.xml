@@ -10,7 +10,7 @@
     tools:context=".MainActivitys.icebreakerActivity">
 
     <TextView
-        android:id="@+id/icebreakerTextView"
+        android:id="@+id/icebreakerTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -33,7 +33,7 @@
 
 
     <TextView
-        android:id="@+id/showNewIcebreakerTextView"
+        android:id="@+id/showIcebreakerTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"

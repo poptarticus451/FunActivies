@@ -1,0 +1,22 @@
+/local.properties
+/build.gradle
+/app/build.gradle
+/gradle/wrapper/gradle-wrapper.properties
+/app/proguard-rules.pro
+/gradle.properties
+/settings.gradle
+/gradlew
+/Fun Activitys.iml
+/gradlew.bat
+/PunsAd.iml
+/Fun Activitys-AaronsDesktop.iml
+/gradle/wrapper/gradle-wrapper.jar
+/Certificates/upload_cert.der
+/Certificates/deployment_cert.der
+/app/google-services.json
+/app/fabric.properties
+/app/app.iml
+/app/build/
+/app/release/app-release.aab
+/.gradle/
+/.idea/

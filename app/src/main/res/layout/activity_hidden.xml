@@ -27,7 +27,7 @@
         ads:layout_constraintVertical_bias="0.352" />
 
     <EditText
-        android:id="@+id/puzzlePasscode"
+        android:id="@+id/puzzleEditTextPasscode"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:background="@android:color/white"
@@ -44,7 +44,7 @@
         ads:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/enterButton"
+        android:id="@+id/puzzleEnterButton"
         android:layout_width="wrap_content"
         android:layout_height="55dp"
         android:layout_marginStart="24dp"

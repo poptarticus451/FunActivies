@@ -1,19 +1,15 @@
 package org.poptarticus.FunActivitys.MainActivitys;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Button;
+import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -23,59 +19,67 @@ import org.poptarticus.FunActivitys.R;
 
 import java.util.Random;
 
-public class icebreakerActivity extends Activity {
+public class icebreakerActivity extends Fragment {
 	
 	
 	
-	int numberToShowHint = 0;
-	
-	AdView mAdView;
+	private int numberToShowHint = 0;
 	
 	private allBooks mAllBooks = new allBooks();
 	
+	// This sets the text view when you open the puns activity
+	private int randomIndexOpen = new Random().nextInt(mAllBooks.mIcebreaker.length);
+	
+	private String randomString = mAllBooks.mIcebreaker[randomIndexOpen];
+	
+	//when app opens run this code
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_icebreakers);
-		
-		final TextView icebreakerLabel = findViewById(R.id.icebreakerTextView);
-		final TextView showNewIcebreakerTextView = findViewById(R.id.showNewIcebreakerTextView);
-		final Button showIcebreakerButton = findViewById(R.id.showIcebreakerButton);
-		
-		Typeface myTypeFace = Typeface.createFromAsset(getAssets(), "Highjack.otf");
-		icebreakerLabel.setTypeface(myTypeFace);
+	public View onCreateView(
+			LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState
+	) {
 		
 		numberToShowHint = 0;
 		
-		// This sets the text view when you open the puns activity
-		int randomIndexOpen = new Random().nextInt(mAllBooks.mIcebreaker.length);
-		String randomString = mAllBooks.mIcebreaker[randomIndexOpen];
+		// Inflate the layout for this fragment
+		ViewGroup root = (ViewGroup) inflater.inflate(R.layout.activity_icebreakers, null);
 		
-		showNewIcebreakerTextView.setText(randomString);
+		TextView showIcebreakerTextView = root.findViewById(R.id.showIcebreakerTextView);
 		
-		mAdView = findViewById(R.id.adView);
+		showIcebreakerTextView.setText(randomString);
+		
+		//add the ad on create
+		AdView mAdView = root.findViewById(R.id.adView);
 		AdRequest adRequest = new AdRequest.Builder().build();
 		mAdView.loadAd(adRequest);
 		
-		View.OnClickListener listener = new View.OnClickListener() {
+		return root;
+	}
+	
+	public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+		
+		super.onViewCreated(view, savedInstanceState);
+		
+		final TextView icebreakerTitle = view.findViewById(R.id.icebreakerTitle);
+		final TextView showIcebreakerTextView = view.findViewById(R.id.showIcebreakerTextView);
+		
+		view.findViewById(R.id.showIcebreakerButton).setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View view) {
-				
 				numberToShowHint += 1;
 				
-				if (numberToShowHint == 40) {
-					icebreakerLabel.setText(R.string.hiddenActivityHint);
-					icebreakerLabel.setTextSize(20);
-					icebreakerLabel.setGravity(Gravity.CENTER);
+				if (numberToShowHint == 25) {
+					icebreakerTitle.setText(R.string.hiddenActivityHint);
+					icebreakerTitle.setTextSize(20);
+					icebreakerTitle.setGravity(Gravity.CENTER);
 					
 					new Handler().postDelayed(new Runnable() {
 						
 						@Override
 						public void run() {
 							
-							icebreakerLabel.setText(R.string.Puns);
+							icebreakerTitle.setText(R.string.Puns);
 						}
 					}, 2500);
 				} else {
@@ -83,42 +87,13 @@ public class icebreakerActivity extends Activity {
 					int randomIndex = new Random().nextInt(mAllBooks.mIcebreaker.length);
 					String randomString = mAllBooks.mIcebreaker[randomIndex];
 					
-					showNewIcebreakerTextView.setText(randomString);
+					//on button click change text
+					showIcebreakerTextView.setText(randomString);
 				}
 			}
 			
-		};
-		showIcebreakerButton.setOnClickListener(listener);
+		});
 		
-		// Making notification bar transparent
-		if (Build.VERSION.SDK_INT >= 21) {
-			getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-		}
-		
-		// making notification bar transparent
-		changeStatusBarColor();
-		
-	}
-	
-	/**
-	 * Making notification bar transparent
-	 */
-	private void changeStatusBarColor() {
-		
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-			Window window = getWindow();
-			window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-			window.setStatusBarColor(Color.TRANSPARENT);
-		}
-	}
-	
-	@Override
-	public void onBackPressed() {
-		
-		Log.d("CDA", "onBackPressed Called");
-		Intent intent = new Intent(icebreakerActivity.this, homeScreen.class);
-		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-		startActivity(intent);
 	}
 	
 }

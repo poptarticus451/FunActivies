@@ -19,7 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import org.poptarticus.FunActivitys.MainActivitys.homeScreen;
+import org.poptarticus.FunActivitys.MainActivitys.MainActivity;
 import org.poptarticus.FunActivitys.R;
 
 public class WelcomeActivity extends AppCompatActivity {
@@ -167,7 +167,7 @@ public class WelcomeActivity extends AppCompatActivity {
 	private void launchHomeScreen() {
 		
 		prefManager.setFirstTimeLaunch(false);
-		startActivity(new Intent(WelcomeActivity.this, homeScreen.class));
+		startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
 		finish();
 	}
 	
