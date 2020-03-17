@@ -26,9 +26,6 @@ public class factActivity extends Fragment {
 	
 	private int numberToShowHint = 0;
 	
-	//Define the ad view
-	private AdView mAdView;
-	
 	//private factBook mFactBook = new factBook();
 	private allBooks mAllBooks = new allBooks();
 	
@@ -53,7 +50,8 @@ public class factActivity extends Fragment {
 		showNewFactTextView.setText(randomString);
 		
 		//add the ad on create
-		mAdView = root.findViewById(R.id.adView);
+		//Define the ad view
+		AdView mAdView = root.findViewById(R.id.adView);
 		AdRequest adRequest = new AdRequest.Builder().build();
 		mAdView.loadAd(adRequest);
 		
