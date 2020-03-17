@@ -1,70 +1,67 @@
 package org.poptarticus.FunActivitys.HiddenPuzzle;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.EditText;
+import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
-import org.poptarticus.FunActivitys.MainActivitys.homeScreen;
 import org.poptarticus.FunActivitys.R;
 
-public class hiddenActivity extends Activity {
+public class hiddenActivity extends Fragment {
 	
 	
 	
-	AdView mAdView;
+	private AdView mAdView;
 	
-	String passcode = "1234";
+	private String passcode = "1234";
 	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	public View onCreateView(
+			LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState
+	) {
 		
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_hidden);
+		// Inflate the layout for this fragment
+		ViewGroup root = (ViewGroup) inflater.inflate(R.layout.activity_hidden, null);
 		
-		final TextView puzzleCongratulationsTextView = findViewById(R.id.puzzleCongratulationsTextView);
-		final EditText passcodeEditText = findViewById(R.id.puzzlePasscode);
-		final Button enterButton = findViewById(R.id.enterButton);
+		TextView puzzleCongratulationsTextView = root.findViewById(R.id.puzzleCongratulationsTextView);
 		
 		//Set Text view to string
 		puzzleCongratulationsTextView.setText(R.string.congratulations);
 		
-		//Load Ad
-		mAdView = findViewById(R.id.adView);
+		//add the ad on create
+		AdView mAdView = root.findViewById(R.id.adView);
 		AdRequest adRequest = new AdRequest.Builder().build();
 		mAdView.loadAd(adRequest);
 		
-		// Making notification bar transparent
-		if (Build.VERSION.SDK_INT >= 21) {
-			getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-		}
+		return root;
+	}
+	
+	public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
 		
-		// making notification bar transparent
-		changeStatusBarColor();
+		super.onViewCreated(view, savedInstanceState);
 		
-		Intent intent = new Intent(this, quizActivity.class);
-		
-		//enter button on clock listener
-		enterButton.setOnClickListener(new View.OnClickListener() {
+		final TextView puzzleEditTextPasscode = view.findViewById(R.id.puzzleEditTextPasscode);
+		final TextView puzzleCongratulationsTextView = view.findViewById(R.id.puzzleCongratulationsTextView);
+		view.findViewById(R.id.puzzleEnterButton).setOnClickListener(new View.OnClickListener() {
 			
+			@Override
 			public void onClick(View view) {
 				
 				//get text change to string then make sure it is equal to passcode var
-				if (passcodeEditText.getText().toString().equals(passcode)) {
+				if (puzzleEditTextPasscode.getText().toString().equals(passcode)) {
 					
-					startActivity(new Intent(hiddenActivity.this, quizActivity.class));
+					Intent intent = new Intent(getActivity(), quizActivity.class);
+					startActivity(intent);
 					
 				} else {
 					puzzleCongratulationsTextView.setText(R.string.Wrong);
@@ -77,30 +74,15 @@ public class hiddenActivity extends Activity {
 							puzzleCongratulationsTextView.setText(R.string.congratulations);
 						}
 					}, 2500);
-				}
 				
 			}
+			}
+			
 		});
 		
-	}
-	
-	//Making notification bar transparent
-	private void changeStatusBarColor() {
 		
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-			Window window = getWindow();
-			window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-			window.setStatusBarColor(Color.TRANSPARENT);
-		}
-	}
-	
-	@Override
-	public void onBackPressed() {
 		
-		Log.d("CDA", "onBackPressed Called");
-		Intent intent = new Intent(hiddenActivity.this, homeScreen.class);
-		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-		startActivity(intent);
 	}
 	
 }
+

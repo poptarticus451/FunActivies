@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeScreen">
+
+    <fragment
+        android:id="@+id/homeScreen"
+        android:name="org.poptarticus.FunActivitys.MainActivitys.homeScreen"
+        android:label="activity_home_screen"
+        tools:layout="@layout/activity_home_screen">
+        <action
+            android:id="@+id/action_homeScreen_to_punsActivity"
+            app:destination="@id/punsActivity" />
+        <action
+            android:id="@+id/action_homeScreen_to_icebreakerActivity"
+            app:destination="@id/icebreakerActivity" />
+        <action
+            android:id="@+id/action_homeScreen_to_factActivity"
+            app:destination="@id/factActivity" />
+        <action
+            android:id="@+id/action_homeScreen_to_hiddenActivity"
+            app:destination="@id/hiddenActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/factActivity"
+        android:name="org.poptarticus.FunActivitys.MainActivitys.factActivity"
+        android:label="activity_fact"
+        tools:layout="@layout/activity_fact" />
+    <fragment
+        android:id="@+id/punsActivity"
+        android:name="org.poptarticus.FunActivitys.MainActivitys.punsActivity"
+        android:label="activity_puns"
+        tools:layout="@layout/activity_puns" />
+    <fragment
+        android:id="@+id/icebreakerActivity"
+        android:name="org.poptarticus.FunActivitys.MainActivitys.icebreakerActivity"
+        android:label="activity_icebreakers"
+        tools:layout="@layout/activity_icebreakers" />
+    <fragment
+        android:id="@+id/hiddenActivity"
+        android:name="org.poptarticus.FunActivitys.HiddenPuzzle.hiddenActivity"
+        android:label="activity_hidden"
+        tools:layout="@layout/activity_hidden" />
+</navigation>
