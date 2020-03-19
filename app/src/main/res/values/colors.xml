@@ -4,7 +4,19 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="buttonPressed">#9C9C9C</color>
+
     <color name="homeScreenButtonText">#090979</color>
+    <color name="punsScreenButtonText">#FFA200</color>
+    <color name="factsScreenButtonText">#F259AC</color>
+    <color name="icebreakersScreenButtonText">#E5432D</color>
+    <color name="hiddenScreenButtonText">#FF0000</color>
+
+
+    <color name="homeScreenStatusBar">#00D4FF</color>
+    <color name="punsScreenStatusBar">#8B0100</color>
+    <color name="icebreakersScreenStatusBar">#660000</color>
+    <color name="factScreenStatusBar">#753A88</color>
+    <color name="hiddenScreenStatusBar">#000000</color>
 
     <!-- Screens background color-->
     <color name="bg_screen1">#f64c73</color>

@@ -19,6 +19,7 @@
         android:layout_marginTop="64dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="620dp"
+        android:fontFamily="@font/arima_madurai_extrabold"
         android:shadowColor="#575656"
         android:shadowDx="3"
         android:shadowDy="6"
@@ -38,6 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
+        android:fontFamily="@font/arima_madurai_medium"
         android:gravity="center"
         android:textColor="@android:color/white"
         android:textSize="24sp"
@@ -49,6 +51,7 @@
 
     <Button
         android:id="@+id/showIcebreakerButton"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton.Icon.Icebreakers"
         android:layout_width="0dp"
         android:layout_height="55dp"
         android:layout_marginStart="24dp"
@@ -56,8 +59,6 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="8dp"
         android:text="@string/icebreakerButtonText"
-        android:textColor="#E5432D"
-        android:theme="@style/PrimaryColoredButton"
         ads:layout_constraintBottom_toTopOf="@+id/adView"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent"

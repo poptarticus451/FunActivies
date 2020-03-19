@@ -1,5 +1,6 @@
 package org.poptarticus.FunActivitys.MainActivitys;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -11,6 +12,8 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import org.poptarticus.FunActivitys.R;
+
+import java.util.Objects;
 
 public class homeScreen extends Fragment {
 	
@@ -31,6 +34,11 @@ public class homeScreen extends Fragment {
 	}
 	
 	public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+		
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+			
+			Objects.requireNonNull(getActivity()).getWindow().setStatusBarColor(getActivity().getColor(R.color.homeScreenStatusBar));
+		}
 		
 		super.onViewCreated(view, savedInstanceState);
 		
@@ -78,7 +86,7 @@ public class homeScreen extends Fragment {
 						
 						number = 0;
 					}
-				}, 2500);
+				}, 500);
 				
 				if (number == 3) {
 					NavHostFragment.findNavController(homeScreen.this)

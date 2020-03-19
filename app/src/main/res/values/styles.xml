@@ -1,10 +1,11 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="PrivateResource">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- enable window content transitions -->
         <item name="android:windowContentTransitions">true</item>
 
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
         <!-- enable overlapping of exiting and entering activities -->
         <item name="android:windowAllowEnterTransitionOverlap">true</item>
         <item name="android:windowAllowReturnTransitionOverlap">true</item>
@@ -17,6 +18,54 @@
     <style name="PrimaryColoredButton" parent="Base.Widget.AppCompat.Button.Colored">
         <item name="colorButtonNormal">@android:color/white</item>
         <item name="colorControlHighlight">@color/buttonPressed</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.Button.TextButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:paddingLeft">@dimen/mtrl_btn_text_btn_padding_left</item>
+        <item name="android:paddingRight">@dimen/mtrl_btn_text_btn_padding_right</item>
+        <item name="backgroundTint">@color/mtrl_btn_text_btn_bg_color_selector</item>
+        <item name="rippleColor">@android:color/darker_gray</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.Button.UnelevatedButton.Icon.Homescreen">
+        <item name="android:paddingLeft">@dimen/mtrl_btn_icon_btn_padding_left</item>
+        <item name="rippleColor">@color/homeScreenButtonText</item>
+        <item name="backgroundTint">@android:color/white</item>
+        <item name="android:textColor">@color/homeScreenButtonText</item>
+        <item name="fontFamily">@font/arima_madurai_extrabold</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.Button.UnelevatedButton.Icon.Puns">
+        <item name="android:paddingLeft">@dimen/mtrl_btn_icon_btn_padding_left</item>
+        <item name="rippleColor">@color/punsScreenButtonText</item>
+        <item name="backgroundTint">@android:color/white</item>
+        <item name="android:textColor">@color/punsScreenButtonText</item>
+        <item name="fontFamily">@font/arima_madurai_extrabold</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.Button.UnelevatedButton.Icon.Facts">
+        <item name="android:paddingLeft">@dimen/mtrl_btn_icon_btn_padding_left</item>
+        <item name="rippleColor">@color/factsScreenButtonText</item>
+        <item name="backgroundTint">@android:color/white</item>
+        <item name="android:textColor">@color/factsScreenButtonText</item>
+        <item name="fontFamily">@font/arima_madurai_extrabold</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.Button.UnelevatedButton.Icon.Icebreakers">
+        <item name="android:paddingLeft">@dimen/mtrl_btn_icon_btn_padding_left</item>
+        <item name="rippleColor">@color/icebreakersScreenButtonText</item>
+        <item name="backgroundTint">@android:color/white</item>
+        <item name="android:textColor">@color/icebreakersScreenButtonText</item>
+        <item name="fontFamily">@font/arima_madurai_extrabold</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.Button.UnelevatedButton.Icon.HiddenPasscode">
+        <item name="android:paddingLeft">@dimen/mtrl_btn_icon_btn_padding_left</item>
+        <item name="rippleColor">@color/hiddenScreenButtonText</item>
+        <item name="backgroundTint">@android:color/white</item>
+        <item name="android:textColor">@color/hiddenScreenButtonText</item>
+        <item name="fontFamily">@font/arima_madurai_extrabold</item>
     </style>
 
 </resources>

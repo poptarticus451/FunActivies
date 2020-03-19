@@ -1,6 +1,7 @@
 package org.poptarticus.FunActivitys.HiddenPuzzle;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -13,8 +14,11 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.material.textfield.TextInputEditText;
 
 import org.poptarticus.FunActivitys.R;
+
+import java.util.Objects;
 
 public class hiddenActivity extends Fragment {
 	
@@ -48,9 +52,14 @@ public class hiddenActivity extends Fragment {
 	
 	public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
 		
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+			
+			Objects.requireNonNull(getActivity()).getWindow().setStatusBarColor(getActivity().getColor(R.color.hiddenScreenStatusBar));
+		}
+		
 		super.onViewCreated(view, savedInstanceState);
 		
-		final TextView puzzleEditTextPasscode = view.findViewById(R.id.puzzleEditTextPasscode);
+		final TextInputEditText puzzleEditTextPasscode = view.findViewById(R.id.puzzleEditTextPasscode);
 		final TextView puzzleCongratulationsTextView = view.findViewById(R.id.puzzleCongratulationsTextView);
 		view.findViewById(R.id.puzzleEnterButton).setOnClickListener(new View.OnClickListener() {
 			
