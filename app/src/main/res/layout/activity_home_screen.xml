@@ -11,7 +11,8 @@
 
     <Button
         android:id="@+id/hiddenMenuButton"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton.Icon.Homescreen"
+        android:shadowColor="#005768"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -20,7 +21,7 @@
         android:layout_marginBottom="620dp"
         android:background="?android:attr/selectableItemBackground"
         android:fontFamily="@font/arima_madurai_extrabold"
-        android:shadowColor="#575656"
+        android:textColor="@drawable/button_text_color"
         android:shadowDx="3"
         android:shadowDy="6"
         android:shadowRadius="3"
@@ -33,8 +34,8 @@
 
     <Button
         android:id="@+id/goFunPunsButton"
-        style="@style/Widget.MaterialComponents.Button.UnelevatedButton.Icon.Homescreen"
-        android:layout_width="0dp"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton.Icon.Homescreen.Puns"
+        android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="300dp"
@@ -47,8 +48,8 @@
 
     <Button
         android:id="@+id/goIceBreakers"
-        style="@style/Widget.MaterialComponents.Button.UnelevatedButton.Icon.Homescreen"
-        android:layout_width="0dp"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton.Icon.Homescreen.Icebreakers"
+        android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
@@ -60,8 +61,8 @@
 
     <Button
         android:id="@+id/goFunFacts"
-        style="@style/Widget.MaterialComponents.Button.UnelevatedButton.Icon.Homescreen"
-        android:layout_width="0dp"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton.Icon.Homescreen.Facts"
+        android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"

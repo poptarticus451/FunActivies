@@ -37,8 +37,9 @@
     <string name="congratulations">Congratulations!!!! You found the hidden activity now can you solve the puzzle?????</string>
     <string name="firstChallengeDone">Congratulations on completing the first challenge lets see if you can pass the rest</string>
     <string name="Hint">Passcode</string>
+    <string name="EnterPasscode">Enter the passcode to move on to the next puzzle!!</string>
     <string name="Enter">Enter</string>
-    <string name="Wrong">Wrong!!!</string>
+    <string name="Wrong">Try Again!!</string>
 
     <string name="testTextForAnswerButtons">Answers Button Test</string>
     <string name="startQuizButton">Start the Quiz</string>

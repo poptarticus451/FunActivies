@@ -4,20 +4,18 @@
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- enable window content transitions -->
         <item name="android:windowContentTransitions">true</item>
-
-        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorPrimaryDark">@color/homeScreenStatusBar</item>
         <!-- enable overlapping of exiting and entering activities -->
         <item name="android:windowAllowEnterTransitionOverlap">true</item>
         <item name="android:windowAllowReturnTransitionOverlap">true</item>
-    </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+        <!--Change Cursor Color -->
+        <item name="colorPrimary">@color/colorControlActivated</item>
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="PrimaryColoredButton" parent="Base.Widget.AppCompat.Button.Colored">
-        <item name="colorButtonNormal">@android:color/white</item>
-        <item name="colorControlHighlight">@color/buttonPressed</item>
+        <item name="colorSecondary">@color/colorControlActivated</item>
+        <!-- Change Background Color -->
+        <item name="colorSurface">@android:color/white</item>
     </style>
 
     <style name="Widget.MaterialComponents.Button.TextButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
@@ -29,6 +27,30 @@
     </style>
 
     <style name="Widget.MaterialComponents.Button.UnelevatedButton.Icon.Homescreen">
+        <item name="android:paddingLeft">@dimen/mtrl_btn_icon_btn_padding_left</item>
+        <item name="rippleColor">@android:color/transparent</item>
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="android:textColor">@color/homeScreenButtonText</item>
+        <item name="fontFamily">@font/arima_madurai_extrabold</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.Button.UnelevatedButton.Icon.Homescreen.Puns">
+        <item name="android:paddingLeft">@dimen/mtrl_btn_icon_btn_padding_left</item>
+        <item name="rippleColor">@color/homeScreenButtonText</item>
+        <item name="backgroundTint">@android:color/white</item>
+        <item name="android:textColor">@color/homeScreenButtonText</item>
+        <item name="fontFamily">@font/arima_madurai_extrabold</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.Button.UnelevatedButton.Icon.Homescreen.Icebreakers">
+        <item name="android:paddingLeft">@dimen/mtrl_btn_icon_btn_padding_left</item>
+        <item name="rippleColor">@color/homeScreenButtonText</item>
+        <item name="backgroundTint">@android:color/white</item>
+        <item name="android:textColor">@color/homeScreenButtonText</item>
+        <item name="fontFamily">@font/arima_madurai_extrabold</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.Button.UnelevatedButton.Icon.Homescreen.Facts">
         <item name="android:paddingLeft">@dimen/mtrl_btn_icon_btn_padding_left</item>
         <item name="rippleColor">@color/homeScreenButtonText</item>
         <item name="backgroundTint">@android:color/white</item>
@@ -59,7 +81,6 @@
         <item name="android:textColor">@color/icebreakersScreenButtonText</item>
         <item name="fontFamily">@font/arima_madurai_extrabold</item>
     </style>
-
     <style name="Widget.MaterialComponents.Button.UnelevatedButton.Icon.HiddenPasscode">
         <item name="android:paddingLeft">@dimen/mtrl_btn_icon_btn_padding_left</item>
         <item name="rippleColor">@color/hiddenScreenButtonText</item>
@@ -67,5 +88,6 @@
         <item name="android:textColor">@color/hiddenScreenButtonText</item>
         <item name="fontFamily">@font/arima_madurai_extrabold</item>
     </style>
+
 
 </resources>

@@ -45,13 +45,14 @@ public class WelcomeActivity extends AppCompatActivity {
 		public void onPageSelected(int position) {
 			
 			addBottomDots(position);
-			
 			// changing the next button text 'NEXT' / 'GOT IT'
 			if (position == layouts.length - 1) {
 				// last page. make button text to GOT IT
+
 				btnNext.setText(getString(R.string.start));
 				btnSkip.setVisibility(View.GONE);
 			} else {
+
 				// still pages are left
 				btnNext.setText(getString(R.string.next));
 				btnSkip.setVisibility(View.VISIBLE);
@@ -94,7 +95,10 @@ public class WelcomeActivity extends AppCompatActivity {
 		dotsLayout = findViewById(R.id.layoutDots);
 		btnSkip = findViewById(R.id.btn_skip);
 		btnNext = findViewById(R.id.btn_next);
-		
+
+		btnNext.setBackgroundResource(0);
+		btnSkip.setBackgroundResource(0);
+
 		// layouts of all welcome sliders
 		// add few more layouts if you want
 		layouts = new int[]{
